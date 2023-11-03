@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: E:\ESIS Final\movie-recommendations-front
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - fullstack-net
+
+  backend:
+    build: E:\ESIS Final\movie-recommendations
+    ports:
+      - "5000:5000"
+    networks:
+      - fullstack-net
+
+networks:
+  fullstack-net:
